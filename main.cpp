@@ -89,6 +89,47 @@ void viewProblems(const vector<Problem>& problems)
     }
 }
 
+void searchProblem(const vector<Problem>& problems)
+{
+    if (problems.empty())
+    {
+        cout << "\nNo problems added yet.\n";
+        return;
+    }
+
+    cin.ignore();
+
+    string searchName;
+    bool found = false;
+
+    cout << "\n===== Search Problem =====\n";
+    cout << "Enter Problem Name: ";
+    getline(cin, searchName);
+
+    for (const auto& problem : problems)
+    {
+        if (problem.name == searchName)
+        {
+            cout << "\nProblem Found!\n\n";
+
+            cout << "Problem    : " << problem.name << endl;
+            cout << "Platform   : " << problem.platform << endl;
+            cout << "Difficulty : " << problem.difficulty << endl;
+            cout << "Topic      : " << problem.topic << endl;
+            cout << "Date       : " << problem.dateSolved << endl;
+            cout << "Time Taken : " << problem.timeTaken << " minutes\n";
+
+            found = true;
+            break;
+        }
+    }
+
+    if (!found)
+    {
+        cout << "\nProblem not found.\n";
+    }
+}
+
 int main()
 {
     vector<Problem> problems;
@@ -122,7 +163,7 @@ int main()
             break;
 
         case 3:
-            cout << "\nFeature not implemented yet.\n";
+            searchProblem(problems);
             break;
 
         case 4:
