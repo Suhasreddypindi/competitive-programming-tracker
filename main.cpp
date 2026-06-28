@@ -255,15 +255,15 @@ int main()
 
     while (choice != 6)
     {
-        cout << "\n==================================================\n";
-        cout << "        Competitive Programming Tracker\n";
-        cout << "==================================================\n";
+        cout << "\n=====================================================\n";
+        cout << "          Competitive Programming Tracker\n";
+        cout << "=====================================================\n";
 
         cout << "1. Add Problem\n";
         cout << "2. View Problems\n";
         cout << "3. Search Problem\n";
         cout << "4. Delete Problem\n";
-        cout << "5. Statistics\n";
+        cout << "5. View Statistics\n";
         cout << "6. Exit\n\n";
 
         cout << "Enter Choice: ";
@@ -292,7 +292,8 @@ int main()
             break;
 
         case 6:
-            cout << "\nThank you for using Competitive Programming Tracker!\n";
+            cout << "\nSaving data...\n";
+            cout << "Goodbye!\n";
             break;
 
         default:

@@ -2,22 +2,29 @@
 
 A C++ console application for tracking solved competitive programming problems.
 
-## 🚀 Features (Planned)
+## Features
 
 - Add Problems
 - View Problems
 - Search Problems
 - Delete Problems
-- Statistics Dashboard
-- Save & Load Data
+- View Statistics
+- Automatic File Saving
+- Automatic File Loading
 
-## 🛠️ Tech Stack
+## Technologies Used
 
 - C++
 - STL
-- Git
-- GitHub
+- File Handling
+- Object-Oriented Programming
 
-## 📌 Project Status
+## Future Improvements
 
-🚧 Currently under development.
+- Edit Problem
+- Sorting
+- Platform-wise Statistics
+
+## Author
+
+Suhas Reddy
