@@ -2,6 +2,7 @@
 #include <vector>
 #include <string>
 #include <iomanip>
+#include <fstream>
 
 using namespace std;
 
@@ -203,9 +204,52 @@ void showStatistics(const vector<Problem>& problems)
          << averageTime << " minutes\n";
 }
 
+void saveToFile(const vector<Problem>& problems)
+{
+    ofstream file("problems.txt");
+
+    for (const auto& problem : problems)
+    {
+        file << problem.name << endl;
+        file << problem.platform << endl;
+        file << problem.difficulty << endl;
+        file << problem.topic << endl;
+        file << problem.dateSolved << endl;
+        file << problem.timeTaken << endl;
+    }
+
+    file.close();
+}
+
+void loadFromFile(vector<Problem>& problems)
+{
+    ifstream file("problems.txt");
+
+    if (!file)
+        return;
+
+    Problem problem;
+
+    while (getline(file, problem.name))
+    {
+        getline(file, problem.platform);
+        getline(file, problem.difficulty);
+        getline(file, problem.topic);
+        getline(file, problem.dateSolved);
+
+        file >> problem.timeTaken;
+        file.ignore();
+
+        problems.push_back(problem);
+    }
+
+    file.close();
+}
+
 int main()
 {
     vector<Problem> problems;
+    loadFromFile(problems);
 
     int choice = 0;
 
@@ -256,5 +300,6 @@ int main()
         }
     }
 
+    saveToFile(problems);
     return 0;
 }
