@@ -1,6 +1,0 @@
-Two sum
-Leetcode
-Easy
-Arrays
-29-05-2029
-15
