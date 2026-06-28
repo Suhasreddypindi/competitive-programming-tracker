@@ -130,6 +130,42 @@ void searchProblem(const vector<Problem>& problems)
     }
 }
 
+void deleteProblem(vector<Problem>& problems)
+{
+    if (problems.empty())
+    {
+        cout << "\nNo problems to delete.\n";
+        return;
+    }
+
+    cin.ignore();
+
+    string deleteName;
+    bool found = false;
+
+    cout << "\n===== Delete Problem =====\n";
+    cout << "Enter Problem Name: ";
+    getline(cin, deleteName);
+
+    for (auto it = problems.begin(); it != problems.end(); it++)
+    {
+        if (it->name == deleteName)
+        {
+            problems.erase(it);
+
+            cout << "\nProblem deleted successfully.\n";
+
+            found = true;
+            break;
+        }
+    }
+
+    if (!found)
+    {
+        cout << "\nProblem not found.\n";
+    }
+}
+
 int main()
 {
     vector<Problem> problems;
@@ -167,7 +203,7 @@ int main()
             break;
 
         case 4:
-            cout << "\nFeature not implemented yet.\n";
+            deleteProblem(problems);
             break;
 
         case 5:
