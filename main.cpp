@@ -166,6 +166,43 @@ void deleteProblem(vector<Problem>& problems)
     }
 }
 
+void showStatistics(const vector<Problem>& problems)
+{
+    if (problems.empty())
+    {
+        cout << "\nNo problems added yet.\n";
+        return;
+    }
+
+    int easy = 0;
+    int medium = 0;
+    int hard = 0;
+    int totalTime = 0;
+
+    for (const auto& problem : problems)
+    {
+        if (problem.difficulty == "Easy")
+            easy++;
+        else if (problem.difficulty == "Medium")
+            medium++;
+        else if (problem.difficulty == "Hard")
+            hard++;
+
+        totalTime += problem.timeTaken;
+    }
+
+    double averageTime = (double)totalTime / problems.size();
+
+    cout << "\n========== Statistics ==========\n";
+
+    cout << "Total Problems : " << problems.size() << endl;
+    cout << "Easy           : " << easy << endl;
+    cout << "Medium         : " << medium << endl;
+    cout << "Hard           : " << hard << endl;
+    cout << "Average Time   : " << fixed << setprecision(2)
+         << averageTime << " minutes\n";
+}
+
 int main()
 {
     vector<Problem> problems;
@@ -207,7 +244,7 @@ int main()
             break;
 
         case 5:
-            cout << "\nFeature not implemented yet.\n";
+            showStatistics(problems);
             break;
 
         case 6:
