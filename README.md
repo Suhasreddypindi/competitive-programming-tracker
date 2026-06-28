@@ -1,2 +1,2 @@
 # competitive-programming-tracker
-A C++ application for tracking competitive programming progress.
+A C++ console application for tracking solved competitive programming problems.
